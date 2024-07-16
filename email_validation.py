@@ -87,7 +87,6 @@ def store_results_in_db(email, syntax_result, mx_result, deliverability_result):
     c.execute("UPDATE email_validation SET syntax_result = ?, mx_result = ?, deliverability_result = ? WHERE email = ?",
               (syntax_result, mx_result, deliverability_result, email))
 
-    conn.commit()
     conn.close()
 
 # Fonction principale pour valider un email et stocker les résultats dans la base de données
